@@ -2,16 +2,13 @@ from random import randint
 list_pc = []
 intentos = 1
 numero = "Ganaste, el número era "
-while True:
+
+while len(list_pc) != 4: # ejecuta hsata que el número sea de 4 digitos
     i = randint(0,9) # se escoje un número del 0 al 9
     if i not in list_pc:
         list_pc.append(i) # si no esta en la lista, que se agrege, de otra forma que se repita el ciclo
-    if len(list_pc) == 4: # hasta tener 4 dígitos diferentes
-        break
-    
-for i in list_pc: # solo hace que el numero se vea mas bonito
-    numero += str(i)
-    
+        numero += str(i) # solo hace que el numero se vea mas bonito
+
 while True:
     fijas = 0
     set_pc = set()
@@ -58,10 +55,8 @@ while True:
     
     if list_us != list_pc:
         intentos += 1
-        for i in range(0,4): # se verifica en cada una de los 4 indices de la lista
-            u = list_us[i] # y se comparan para ver si hay algun valor igual con
-            p = list_pc[i] # ese mismo indice
-            if u == p:
+        for i in range(4): # se verifica en cada una de los 4 indices de la lista y se comparan para ver si hay algun valor igual con ese mismo indice
+            if list_us[i] == list_pc[i]:
                 fijas += 1 # si si lo hay, que se sume uno a las fijas
             else:
                 set_pc.add(list_pc[i]) # si no, que se agreguen a unos conjuntos
