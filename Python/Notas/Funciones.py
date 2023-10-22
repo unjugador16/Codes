@@ -23,9 +23,10 @@ doblar_valores(n) #en los argumentos por referencia se usan los valores de la va
 doblar_valores(n[:]) #para no modificar el valor de la variable es así, asi se manda una copia
 print(n)
 
-"""las funciones sin retorno solo hacen lo que esta dentro de las funcion y ya, pero las funciones 
-con retorno 'adquieren' un valor, asi que cuando se imprimen las sin retorno muestran none y las con 
-retorno muestran el resultado del codigo dentro de la funcion'"""
+# las funciones sin retorno solo hacen lo que esta dentro de las funcion y ya, pero las funciones 
+# con retorno 'adquieren' un valor, asi que cuando se imprimen las sin retorno muestran none y las con 
+# retorno muestran el resultado del codigo dentro de la funcion
+
 #===================================== funciones sin retorno =====================================#
 
 def saludar(name = "jhon doe"): #el igual sirve para que, cuando no se ingrese un valor, se imprima
@@ -76,3 +77,19 @@ def cuenta_regresiva(num):
         print('Boooooom!!!')
 
 cuenta_regresiva(5)
+
+#====================================== funciones generadoras ====================================#
+
+def genera_pares(limit): # es como una funcion normal, pero devuelve valores iterables de uno en uno
+    num = 1              # lo que lo vuelve mucho mas rapido y eficiente
+    while num < limit:
+        yield num * 2 # yield seria su return
+        num += 1
+devulve_pares = genera_pares(10) # se tiene que guardar en un objeto para que se vuelva iterable
+
+print(next(devulve_pares)) # 2
+print('Mas codigo...')     # se demuestra que va soltando valores de uno en uno
+print(next(devulve_pares)) # 4
+print('Mas codigo...')     # entre llamada y llamada entra en estado de suspencion
+for i in devulve_pares:    # 6 - 18
+    print(i)
