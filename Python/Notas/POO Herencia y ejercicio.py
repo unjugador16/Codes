@@ -36,8 +36,8 @@ class Cajero:
         3. Retiro de efectivo
         4. Salir
         Ingrese la opcion: """))
-        control = 0
-        while control == 0:
+        self.control = 0
+        while self.control == 0:
             if self.opcion == 1:
                 self.consulta_balance()
             elif self.opcion == 2:
@@ -45,7 +45,7 @@ class Cajero:
             elif self.opcion == 3:
                 self.retirar()
             elif self.opcion == 4:
-                control = 1
+                self.control = 1
                 self.salir()
             else:
                 print('Opcion invalida')
