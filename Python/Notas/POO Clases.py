@@ -24,7 +24,7 @@ class Sapo:
 sapo1 = Sapo() # para que se inicie la clase con el __init__ se debe nombrar un objeto
 print(sapo1.croa)
 sapo1.croar()
-print(sapo1.croa) # se "actica" la croacion del sapo al llamar la variable
+print(sapo1.croa) # se "actica" la croacion del sapo al llamar la funcion
 
 #======================================== ejemplo winston ========================================#
 class Winston:
@@ -105,3 +105,24 @@ class caracteristicas:
 
 mi_auto = caracteristicas()
 
+#======================================= metodos de clase ========================================#
+
+class operaciones:
+    def __init__(self):
+        self.valor_1 = int(input('Ingrese primer valor: '))
+        self.valor_2 = int(input('Ingrese sengundo valor: '))
+        self.sumar()       # estos metodos van a operar valor_1 y valor_2
+        self.resta()       # pero se definen luego porque estan el metodo __init__
+        self.multiplicar() # entonces es un metodo que llama un metodo
+
+    def sumar(self):
+        suma = self.valor_1 + self.valor_2 # no se usa self para la variable porque va a ser una variable del metodo, no de la clase
+        print(f'La suma es {suma}')
+    def resta(self):
+        resta = self.valor_1 - self.valor_2
+        print(f'La diferencia es {resta}')
+    def multiplicar(self):
+        mult = self.valor_1 * self.valor_2
+        print(f'El producto es {mult}')
+
+resultado = operaciones()

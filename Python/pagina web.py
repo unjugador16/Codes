@@ -1,3 +1,5 @@
+#cambios: agregar la opcion de ingresar dinero, agregar la opcion de eliminar cuenta, agregar la opcion de 
+
 usuarios = {
     "julian":["manito", 12345, 5000.0],
     "tomas":["sapo", 54321, 6500.0]
