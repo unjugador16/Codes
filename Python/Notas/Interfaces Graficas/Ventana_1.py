@@ -21,3 +21,20 @@ image = PhotoImage(file='Python\\Notas\\Interfaces Graficas\\holamundo.png') # s
 etiqueta2 = Label(ventana, image = image).place(y =200) # se crea una etiqueta para mostrar la imgaen y se le pasa la imagen
 
 ventana.mainloop()
+
+#============================================= Entry =============================================#
+
+ventana = Tk()
+ventana.geometry('300x500')
+nombre_label = Label(ventana, text ='Ingrese Nombre', font =('Cascadia code',16)).place(x =10, y =50)
+campo_nombre = Entry(ventana ,bg ='lightblue', bd =4) # se crea un campo de texto y se le asigna un color de fondo y un tamaño de borde
+campo_nombre.place(x =10, y =90, width =100, height =30) # lugar y tamaño del campo de texto
+
+clave_label = Label(ventana, text ='Ingrese Clave', font =('Cascadia code',16)).place(x =10, y =130)
+campo_clave = Entry(ventana, show ='*', bg ='lightblue', bd =4) # show es para que no se vea lo que se escribe en el campo de texto
+campo_clave.place(x =10, y =170, width =100, height =30) # 
+
+ventana.mainloop()
+
+#============================================ Botones ============================================#
+
