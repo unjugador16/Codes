@@ -92,3 +92,92 @@ radio_1 = Radiobutton(ventana, image= img3, variable= seleccion, value= 3, font=
 radio_1.place(x= 10, y= 250)
 
 ventana.mainloop()
+
+#========================================== Checkbutton ==========================================#
+
+ventana = Tk()
+ventana.geometry('1200x900')
+ventana.title('MENU')
+ventana.resizable(width=False, height=False)
+x , y = 10 , 100
+
+burrito = IntVar()
+cocacola = IntVar()
+dona = IntVar()
+hamburguesa = IntVar()
+helado = IntVar()
+malteada = IntVar()
+papas = IntVar()
+perro = IntVar()
+pizza = IntVar()
+pollo = IntVar()
+taco = IntVar()
+
+def combo():
+    seleccion = ''
+    costo = 0
+    if burrito.get() == 1:
+        seleccion += 'Burrito\n'
+        costo += 3
+    if cocacola.get() == 1:
+        seleccion += 'Coca cola\n'
+        costo += 1
+    if dona.get() == 1:
+        seleccion += 'Dona\n'
+        costo += 2
+    if hamburguesa.get() == 1:
+        seleccion += 'Hamburguesa\n'
+        costo += 5
+    if helado.get() == 1:
+        seleccion += 'Helado\n'
+        costo += 2
+    if malteada.get() == 1:
+        seleccion += 'Malteada\n'
+        costo += 2
+    if papas.get() == 1:
+        seleccion += 'Papas\n'
+        costo += 2
+    if perro.get() == 1:
+        seleccion += 'Perro\n'
+        costo += 5
+    if pizza.get() == 1:
+        seleccion += 'Pizza\n'
+        costo += 5
+    if pollo.get() == 1:
+        seleccion += 'Pollo\n'
+        costo += 4
+    if taco.get() == 1:
+        seleccion += 'Taco\n'
+        costo += 4
+    label_2.config(text= 'Su orden: \n'+ seleccion + f'\nTotal: {costo}$', font= ('Cascadia code', 16))
+
+img_burrito = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\burrito.png')
+img_cocacola = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\cocacola.png')
+img_dona = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\dona.png')
+img_hamburguesa = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\hamburguesa.png')
+img_helado = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\helado.png')
+img_malteada = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\malteada.png')
+img_papas = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\papas.png')
+img_perro = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\perro.png')
+img_pizza = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\pizza.png')
+img_pollo = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\pollo.png')
+img_taco = PhotoImage(file= 'Python\\Notas\\Interfaces Graficas\\Comdia\\taco.png')
+
+label_1 = Label(ventana, text= 'Personaliza tu Combo', font= ('Cascadia code', 22)).place(x= 100, y= 20)
+
+label_2 = Label(ventana)
+label_2.place(x= 950, y= 100)
+
+Checkbutton(ventana, image= img_burrito, variable= burrito, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x, y= y)
+Checkbutton(ventana, image= img_cocacola, variable= cocacola, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x, y= y+150)
+Checkbutton(ventana, image= img_dona, variable= dona, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x, y= y+350)
+Checkbutton(ventana, image= img_hamburguesa, variable= hamburguesa, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= 10, y= y+500)
+Checkbutton(ventana, image= img_helado, variable= helado, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x+300, y= y)
+Checkbutton(ventana, image=img_malteada, variable= malteada, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x+300, y= y+220)
+Checkbutton(ventana, image= img_papas, variable= papas, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x+300, y= y+430)
+Checkbutton(ventana, image= img_perro, variable= perro, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x+600, y= y)
+Checkbutton(ventana, image= img_pizza, variable= pizza, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x+600, y= y+150)
+Checkbutton(ventana, image= img_pollo, variable= pollo, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x+600, y= y+290)
+Checkbutton(ventana, image= img_taco, variable= taco, onvalue= 1, command= combo, font= ('Cascadia code', 12)).place(x= x+600, y= y+450)
+
+ventana.mainloop()
